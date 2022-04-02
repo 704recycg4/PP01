@@ -1,2 +1,2 @@
 ﻿  main.cpp
-  PP01.vcxproj -> C:\Users\biggt\source\repos\PP01\x64\Debug\PP01.exe
+c1xx : fatal error C1083: 소스 파일을 열 수 없습니다. 'main.cpp': No such file or directory
