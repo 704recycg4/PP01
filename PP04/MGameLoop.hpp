@@ -1,8 +1,7 @@
 #pragma once
-#include <iostream>
 #include <chrono>
 #include <thread>
-#include <Windows.h>
+#include "MConsolUtil.hpp"
 
 using namespace std;
 
@@ -11,20 +10,19 @@ namespace MuSeoun_Engine
 	class MGameLoop
 	{
 	private:
-		bool _isGameRunning; // 내부 게임 동작변수
+		bool _isGameRunning;
+		MConsoleRenderer cRenderer;
 
 	public:
-		MGameLoop() 
-		{
-			_isGameRunning = false;
-		}
+		MGameLoop() { _isGameRunning = false; }
 		~MGameLoop() {}
+		int i = 0;
+		chrono::system_clock::time_point  startRenderTimePoint;
 
 		void Run()
 		{
 			_isGameRunning = true;
-
-			Initalize();
+			Initialize();
 
 			while (_isGameRunning)
 			{
@@ -33,33 +31,34 @@ namespace MuSeoun_Engine
 				Render();
 
 			}
-
 			Release();
 		}
 		void Stop()
 		{
-			_isGameRunning = false; // 내부에서 false로 변경
+			_isGameRunning = false;
 		}
 
 	private:
-
-		void Initalize()
+		void Initialize()
 		{
-			SetCursorState(false);
+
+		}
+		void Release()
+		{
 		}
 
 		void Input()
 		{
-			if (GetAsyncKeyState(VK_SPACE) == -0x8000|| GetAsyncKeyState(VK_SPACE) == -0x8001)
-			{
+			/*	if (GetAsyncKeyState(VK_SPACE) & 0x8000 || GetAsyncKeyState(VK_SPACE) & 0x8001)
+				{
 
-			}
-			else
-			{
-				// 김태인
-			}
+				}
+				else
+				{
+
+				}*/
+
 		}
-
 		void Update()
 		{
 
@@ -67,37 +66,28 @@ namespace MuSeoun_Engine
 
 		void Render()
 		{
-			chrono::system_clock::time_point startRenderTimePoint = chrono::system_clock::now();
-			//system("cls");
-			cout << "Rendering... ";
+			float FPS;
+
+			cRenderer.Clear();
+			cRenderer.MoveCursor(10, 20);
+
 
 			chrono::duration<double> renderDuration = chrono::system_clock::now() - startRenderTimePoint;
 			
-			cout << "Rendering speed : " << renderDuration.count()<< "sec" << endl;
+			startRenderTimePoint = chrono::system_clock::now();
 
-			int remainingFrameTime = 100 - (int)(renderDuration.count() * 1000.0);
-
-			if (remainingFrameTime > 0)
-				this_thread::sleep_for(chrono::microseconds(remainingFrameTime));
+			cRenderer.DrawString("FPS : " + to_string(FPS = 1.f / renderDuration.count()));
 		}
+		////cout << "Rendering speed : " << renderDuration.count() << "sec" << endl;
 
-		void Release(){}
-
-	private: // 게임 사용 함수
-		
-		void MoveCursor(short x, short y)
-		{
-			COORD position = { x, y };
-			SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), position);
-		}
-
-		void SetCursorState(bool visible)
-		{
-			CONSOLE_CURSOR_INFO consoleCursorInfo;
-			consoleCursorInfo.bVisible = visible;
-			consoleCursorInfo.dwSize = 1;
-
-			SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &consoleCursorInfo);
-		}
+		//int remainingFrameTime = 100 - (int)(renderDuration.count() * 1000.0);
+		//if (remainingFrameTime > 0)
+		//	this_thread::sleep_for(chrono::milliseconds(remainingFrameTime));
 	};
+
+
+
+
+
+
 }
