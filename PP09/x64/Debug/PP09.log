@@ -1,0 +1,5 @@
+﻿  PP09.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': 매크로 재정의
+C:\Users\recyc\source\repos\PP01\packages\glfw.3.3.7\build\native\include\GLFW\glfw3.h(123): message : 'APIENTRY'의 이전 정의를 참조하십시오.
+C:\Users\recyc\source\repos\PP01\PP09\PP09.cpp(34,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  PP09.vcxproj -> C:\Users\recyc\source\repos\PP01\x64\Debug\PP09.exe
