@@ -12,13 +12,14 @@ private:
     bool moveRight = false;
 
 public:
-    float player_y=0;
-    float player_x=0;
+    float player_y;
+    float player_x;
     float playerSpeed = 0.015f;
 
     Player()
     {
-
+        player_y=0;
+        player_x=0;
     }
     ~Player() {}
     void Input()

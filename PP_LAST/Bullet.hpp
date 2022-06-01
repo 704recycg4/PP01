@@ -3,6 +3,8 @@
 #include <Windows.h>
 #include <GLFW/glfw3.h>
 
+#include "Collider.hpp"
+
 #pragma once
 class Bullet : public GameObject
 {
@@ -33,6 +35,8 @@ public:
         glBegin(GL_POINTS);
         glColor3f(0.811, 1, 0.9);
         glVertex2f(bullet_x, bullet_y);
+        
         glEnd();
+        glPointSize(5);
     }
 };

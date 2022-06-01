@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <Windows.h>
+#include <crtdbg.h>
 
 //#include "Vector.h"
 
@@ -11,6 +12,7 @@
 #include "Collider.hpp"
 #include "Bullet.hpp"
 #include "Player.hpp"
+#include "Enemy.hpp"
 
 #pragma comment(lib,"OpenGL32")
 
@@ -48,7 +50,6 @@ void main()
 		glfwTerminate();
 		exit(EXIT_FAILURE);
 	}
-
 	glfwMakeContextCurrent(window); // 윈도우 이벤트 잡아옴 사용하겠다// 합친다
 	glfwSetKeyCallback(window, key_callback);
 
@@ -58,8 +59,7 @@ void main()
 	glfwGetFramebufferSize(window, &width, &height);
 	ratio = width / (float)height;
 
-	int i = 0;
-
+	//_______________________________________________________
 	float enemy_x = 0, enemy_y = 0;
 	float player_x = 0, player_y = 0;
 	float bullet_x = 0, bullet_y = 0;
@@ -70,6 +70,10 @@ void main()
 
 	Bullet b;
 	Player p;
+	Enemy E(-0.5f,0 );
+	Enemy E2(-0.8f,0 );
+	Enemy E3(-1.1f,0 );
+	Enemy E4(-1.4f,0 );
 
 	while (!glfwWindowShouldClose(window))
 	{
@@ -88,57 +92,26 @@ void main()
 	    일직선상*/
 
 
+		b.Update();
+		b.Render();
 
+		E.Update(b.bullet_x,b.bullet_y);
+		E.Render();
+		E2.Update(b.bullet_x, b.bullet_y);
+		E2.Render();
+		E3.Update(b.bullet_x, b.bullet_y);
+		E3.Render();
+		E4.Update(b.bullet_x, b.bullet_y);
+		E4.Render();
 
-		glBegin(GL_TRIANGLES);
-		glColor4f(1.0f, 0.0f, 0.0f, 1.0f);
-		glVertex2f(0.0f + enemy_x, 0.1f + enemy_y); // 1 
-
-		glColor4f(1.0f, 0.0f, 0.0f, 1.0f);
-		glVertex2f(0.1f + enemy_x, 0.1f + enemy_y);// 2
-
-		glColor4f(1.0f, 0.0f, 0.0f, 1.0f);
-		glVertex2f(0.0f + enemy_x, 0.0f + enemy_y);// 3
-
-		glBegin(GL_TRIANGLES);
-		glColor4f(1.0f, 0.0f, 0.0f, 1.0f);
-		glVertex2f(0.1f + enemy_x, 0.1f + enemy_y); // 1
-
-		glColor4f(1.0f, 0.0f, 0.0f, 1.0f);
-		glVertex2f(0.0f + enemy_x, 0.0f + enemy_y);// 2
-
-		glColor4f(1.0f, 0.0f, 0.0f, 1.0f);
-		glVertex2f(0.1f + enemy_x, 0.0f + enemy_y);// 3
-
-		glEnd();
-
-		//(text.data(), text.size(), 0, 0);
-
-
-		//if (GetAsyncKeyState(VK_UP) & 0x8000 || GetAsyncKeyState(VK_UP) & 0x8001)
-		//{
-		//	player_y += playerSpeed;
-		//}
-		//if (GetAsyncKeyState(VK_DOWN) & 0x8000 || GetAsyncKeyState(VK_DOWN) & 0x8001)
-		//{
-		//	player_y -= playerSpeed;
-		//}
-		//if (GetAsyncKeyState(VK_RIGHT) & 0x8000 || GetAsyncKeyState(VK_RIGHT) & 0x8001)
-		//{
-		//	player_x += playerSpeed;
-		//}
-		//if (GetAsyncKeyState(VK_LEFT) & 0x8000 || GetAsyncKeyState(VK_LEFT) & 0x8001)
-		//{
-		//	player_x -= playerSpeed;
-		//}
 		p.Input();
 		p.Render();
 		if (GetAsyncKeyState(VK_SPACE) & 0x0001)
 		{
 			// Bullet.shot()
 			std::cout << "\n SPACE  ";
-			bullet_x = (player_x + 0.05);
-			bullet_y = (player_y + 0.1f);
+			bullet_x = (p.player_x + 0.05);
+			bullet_y = (p.player_y + 0.1f);
 			b.Shot(bullet_x, bullet_y);
 
 			std::cout << "\nX: " << bullet_x << "  Y:  " << bullet_y;
@@ -147,39 +120,17 @@ void main()
 		Collider(enemy_x, enemy_y, player_x, player_y);
 
 		// bullet ----------------------------
-		b.Update();
-		b.Render();
-
-
-		//glBegin(GL_TRIANGLES);
-		//glColor3f(0.0f, 0.0f, 1.0f);
-		//glVertex2f(0.0f + player_x, 0.1f + player_y); // 1 
-
-		//glColor3f(0.0f, 0.0f, 1.0f);
-		//glVertex2f(0.1f + player_x, 0.1f + player_y);// 2
-
-		//glColor3f(0.0f, 0.0f, 1.0f);
-		//glVertex2f(0.0f + player_x, 0.0f + player_y);// 3
-
-		//glBegin(GL_TRIANGLES);
-		//glColor3f(0.0f, 0.0f, 1.0f);
-		//glVertex2f(0.1f + player_x, 0.1f + player_y); // 1
-
-		//glColor3f(0.0f, 0.0f, 1.0f);
-		//glVertex2f(0.0f + player_x, 0.0f + player_y);// 2
-
-		//glColor3f(0.0f, 0.0f, 1.0f);
-		//glVertex2f(0.1f + player_x, 0.0f + player_y);// 3
-
-		//glEnd();
 
 
 
 		glfwSwapBuffers(window); // 그리는ㄴ 모습이 나오지 않도록 버퍼끼리 스왑해주며 더블버퍼 스왑
 		glfwPollEvents(); // 쌓아뒀다가 사용
+		//if (GetAsyncKeyState(VK_F1) & 0x0001)
+		//{
+
+		//}
 	}
-
-
+	_CrtDumpMemoryLeaks();
 	glfwDestroyWindow(window);
 	glfwTerminate();
 	exit(EXIT_SUCCESS);
