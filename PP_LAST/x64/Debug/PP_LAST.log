@@ -2,6 +2,29 @@
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': 매크로 재정의
 C:\Users\recyc\source\repos\PP01\packages\glfw.3.3.7\build\native\include\GLFW\glfw3.h(123): message : 'APIENTRY'의 이전 정의를 참조하십시오.
 C:\Users\recyc\source\repos\PP01\PP_LAST\Bullet.hpp(36,1): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
-C:\Users\recyc\source\repos\PP01\PP_LAST\main.cpp(43,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-C:\Users\recyc\source\repos\PP01\PP_LAST\main.cpp(113,27): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Player.hpp(57,1): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Player.hpp(57,66): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Player.hpp(57,50): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Player.hpp(58,1): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Player.hpp(58,64): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Player.hpp(58,48): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Player.hpp(59,1): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Player.hpp(59,64): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Player.hpp(59,49): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Enemy.hpp(46,42): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Enemy.hpp(46,33): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Enemy.hpp(104,23): warning C4552: '*': 식의 결과가 사용되지 않습니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Enemy.hpp(176,45): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Enemy.hpp(176,29): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Enemy.hpp(179,45): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Enemy.hpp(179,29): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Enemy.hpp(182,45): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Enemy.hpp(182,29): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Enemy.hpp(186,45): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Enemy.hpp(186,29): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Enemy.hpp(189,45): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Enemy.hpp(189,29): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Enemy.hpp(192,45): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\Enemy.hpp(192,29): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\recyc\source\repos\PP01\PP_LAST\main.cpp(77,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
   PP_LAST.vcxproj -> C:\Users\recyc\source\repos\PP01\x64\Debug\PP_LAST.exe

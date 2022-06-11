@@ -9,14 +9,14 @@
 class Bullet : public GameObject
 {
 private:
-    float bullet_speed = 0.07f;
+    
 public:
+    float bullet_speed = 0.07f;
     float bullet_x;
     float bullet_y;
 
     Bullet()
     {
-
     }
     ~Bullet() {}
 

@@ -139,18 +139,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Bullet.hpp" />
+    <ClInclude Include="Collider.hpp" />
+    <ClInclude Include="Enemy.hpp" />
+    <ClInclude Include="GameObject.hpp" />
+    <ClInclude Include="LoadBitmap.hpp" />
+    <ClInclude Include="Player.hpp" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bullet.hpp" />
-    <ClInclude Include="Collider.hpp" />
-    <ClInclude Include="Enemy.hpp" />
-    <ClInclude Include="GameObject.hpp" />
-    <ClInclude Include="MGameLoop.hpp" />
-    <ClInclude Include="Player.hpp" />
+    <Image Include="Player.bmp" />
+    <Image Include="Enemy.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

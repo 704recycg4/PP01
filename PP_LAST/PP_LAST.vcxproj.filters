@@ -16,6 +16,29 @@
     <Filter Include="Component">
       <UniqueIdentifier>{ea67f098-379b-44d7-b565-089e56c6a033}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject">
+      <UniqueIdentifier>{650cb277-32ce-4db6-bc21-011c94c025ba}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Collider.hpp">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.hpp">
+      <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.hpp">
+      <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.hpp">
+      <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.hpp">
+      <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadBitmap.hpp">
+      <Filter>Component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -26,23 +49,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MGameLoop.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="GameObject.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Bullet.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Collider.hpp">
-      <Filter>Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
+    <Image Include="Player.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Enemy.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
 </Project>

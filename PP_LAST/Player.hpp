@@ -22,6 +22,7 @@ public:
         player_x=0;
     }
     ~Player() {}
+
     void Input()
     {
         if (GetAsyncKeyState(VK_UP) & 0x8000 || GetAsyncKeyState(VK_UP) & 0x8001)
@@ -45,28 +46,18 @@ public:
     {
 
     }
-    void Render()
+    void Render(GLuint texName)
     {
+        glEnable(GL_TEXTURE_2D);
+
+        glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
+        glBindTexture(GL_TEXTURE_2D, texName);
 
         glBegin(GL_TRIANGLES);
-        glColor3f(0.0f, 0.0f, 1.0f);
-        glVertex2f(0.0f + player_x, 0.1f + player_y); // 1 
-
-        glColor3f(0.0f, 0.0f, 1.0f);
-        glVertex2f(0.1f + player_x, 0.1f + player_y);// 2
-
-        glColor3f(0.0f, 0.0f, 1.0f);
-        glVertex2f(0.0f + player_x, 0.0f + player_y);// 3
-
-        glBegin(GL_TRIANGLES);
-        glColor3f(0.0f, 0.0f, 1.0f);
-        glVertex2f(0.1f + player_x, 0.1f + player_y); // 1
-
-        glColor3f(0.0f, 0.0f, 1.0f);
-        glVertex2f(0.0f + player_x, 0.0f + player_y);// 2
-
-        glColor3f(0.0f, 0.0f, 1.0f);
-        glVertex2f(0.1f + player_x, 0.0f + player_y);// 3
+        glTexCoord2f(-0.65, 0.0); glVertex3f(-0.1+ player_x, -0.1+ player_y, 0.0); // 왼쪽 점
+        glTexCoord2f(0.35, 0.0); glVertex3f(0.1+ player_x, -0.1+ player_y, 0.0); // 오른쪽 점
+        glTexCoord2f(-0.15, 1.0); glVertex3f(0.0+ player_x, 0.1+ player_y, 0.0); // 
+        //glTexCoord2f(0.0, 1.0); glVertex3f(0.0 + player_x, 0.1 + player_y, 0.0);
 
         glEnd();
     }
